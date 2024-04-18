@@ -7,9 +7,9 @@
   justify-content: space-around;
   align-items: flex-start;
   text-wrap: wrap;
-  background-color: yellow;
   margin: 10px;
   padding: 10px;
+  border: 1px solid black;
 
   .beer-card__header {
     display: flex;
@@ -52,14 +52,7 @@
 
 @media screen and (min-width: 768px) {
   .beer-card {
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-start;
-    text-wrap: wrap;
-    background-color: yellow;
-    margin: 10px;
+    width: 90%;
+    height: 100%;
   }
 }

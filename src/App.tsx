@@ -8,7 +8,6 @@ import { FormEvent } from "react";
 
 function App() {
   const [filteredBeers, setFilteredBeers] = useState(beers);
-  const [beersAPI, setBeersAPI] = useState([]);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -53,15 +52,6 @@ function App() {
     setFilteredBeers(beers);
     event.currentTarget.reset();
   };
-
-  // const getRandomBeer = async () => {
-  //   fetch("http://api.punkapi.com/v2/beers/random").then((data) => {
-  //     console.log(data);
-  //     setBeersAPI(data);
-  //   });
-  //   return beersAPI;
-  // };
-  // console.log(getRandomBeer());
 
   return (
     <div className="app">
