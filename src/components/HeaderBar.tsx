@@ -1,5 +1,7 @@
+import "./HeaderBar.scss";
+
 const HeaderBar = () => {
-  return <h1 className="header-bar">HeaderBar</h1>;
+  return <h1 className="header-bar">Brewdog encyclopaedia</h1>;
 };
 
 export default HeaderBar;

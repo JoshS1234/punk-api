@@ -58,14 +58,13 @@ function App() {
       <HeaderBar />
       <div className="app__page-content">
         <div className="app__search-container-div">
-          <h2>SearchContainer</h2>
           <SearchContainer
             handleSubmit={handleSubmit}
             handleReset={handleReset}
           />
         </div>
         <div className="app__beer-container-div">
-          <h2>Beer container</h2>
+          <h2>Beer list</h2>
           {filteredBeers && <BeerContainer beers={filteredBeers} />}
         </div>
       </div>

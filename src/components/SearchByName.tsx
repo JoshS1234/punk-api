@@ -1,6 +1,8 @@
+import "./SearchByName.scss";
+
 const SearchByName = () => {
   return (
-    <div>
+    <div className="search-container__search-by-name">
       <label htmlFor="searchTerm">Search by name</label>
       <input name="searchTerm" type="text" />
     </div>
