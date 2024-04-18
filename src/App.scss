@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 100vw;
+  min-height: 100vh;
+
+  .app__page-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 85vh;
+    height: 100%;
+    width: 100%;
+    background-color: red;
+
+    .app__search-container-div {
+      width: 100%;
+      min-height: 25vh;
+      background-color: rgb(119, 99, 236);
+    }
+    .app__beer-container-div {
+      width: 100%;
+      min-height: 85vh;
+      height: fit-content;
+      background-color: chartreuse;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .app {
+    .app__page-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+
+      .app__search-container-div {
+        width: 30%;
+        min-height: 85vh;
+        background-color: rgb(119, 99, 236);
+      }
+      .app__beer-container-div {
+        width: 100%;
+        min-height: 85vh;
+        height: fit-content;
+        background-color: chartreuse;
+      }
+    }
+  }
+}
