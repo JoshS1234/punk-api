@@ -6,6 +6,7 @@ import Nav from "./components/Nav/Nav";
 import NoPage from "./components/NoPage";
 import beers from "./beers";
 import SpecificBeer from "./components/SpecificBeerPage/SpecificBeer";
+import Sommelier from "./components/Sommelier";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home beers={beers} />} />
         <Route path="/beers/:beerId" element={<SpecificBeer beers={beers} />} />
+        <Route path="/sommelier" element={<Sommelier beers={beers} />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
     </div>

@@ -34,7 +34,9 @@ const BeerCard = ({ beer }: BeerCardProps) => {
       {beer.food_pairing.map((food) => {
         return <p key={food}>-{food}</p>;
       })}
-      <Link to={`/beers/${beer.id}`}>Profile page</Link>
+      <Link className="beer-card__link" to={`/beers/${beer.id}`}>
+        Brewing tips
+      </Link>
     </div>
   ) : (
     <div className="beer-card beer-card--back">
@@ -59,7 +61,9 @@ const BeerCard = ({ beer }: BeerCardProps) => {
           </>
         )}
       </div>
-      <Link to={`/beers/${beer.id}`}>Profile page</Link>
+      <Link className="beer-card__link" to={`/beers/${beer.id}`}>
+        Brewing tips
+      </Link>
     </div>
   );
 };
