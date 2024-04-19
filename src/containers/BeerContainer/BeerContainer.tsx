@@ -8,10 +8,12 @@ type BeerContainerProps = {
 
 const BeerContainer = ({ beers }: BeerContainerProps) => {
   return (
-    <div className="beer-container">
-      {beers.map((beer) => {
-        return <BeerCard beer={beer} key={beer.id} />;
-      })}
+    <div>
+      <div className="beer-container">
+        {beers.map((beer) => {
+          return <BeerCard beer={beer} key={beer.id} />;
+        })}
+      </div>
     </div>
   );
 };

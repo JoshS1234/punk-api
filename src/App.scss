@@ -14,50 +14,10 @@
   min-height: 100vh;
   height: fit-content;
   background-color: antiquewhite;
-
-  .app__page-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 100vh;
-    height: 100%;
-    width: 100%;
-
-    .app__search-container-div {
-      h2 {
-        border: 1px solid black;
-      }
-      width: 100%;
-      min-height: 25vh;
-      height: 25%;
-      border: 1px solid black;
-      background-color: rgb(192, 180, 163);
-    }
-    .app__beer-container-div {
-      h2 {
-        text-align: center;
-      }
-      width: 100%;
-      min-height: fit-content;
-      height: 75%;
-      border: 1px solid black;
-    }
-  }
 }
 
 @media screen and (min-width: 768px) {
-  .app {
-    .app__page-content {
-      .app__search-container-div {
-        width: 100%;
-        height: 100%;
-      }
+}
 
-      .app__beer-container-div {
-        width: 100%;
-        display: grid;
-      }
-    }
-  }
+@media screen and (min-width: 1024px) {
 }
