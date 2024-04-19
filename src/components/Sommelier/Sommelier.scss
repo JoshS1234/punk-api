@@ -1,0 +1,22 @@
+.sommelier-page {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  .sommelier-page__recommendation {
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  .sommelier-page__sommelier {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+
+    img {
+      max-width: 150px;
+      align-self: center;
+      //   max-height: 100px;
+    }
+  }
+}
