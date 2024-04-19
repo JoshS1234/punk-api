@@ -1,7 +1,7 @@
 import "./App.scss";
 import HeaderBar from "./components/HeaderBar";
 import BeerContainer from "./containers/BeerContainer/BeerContainer";
-import SearchContainer from "./containers/SearchContainer/SearchContainer";
+import SearchContainer from "./components/SearchBar/SearchBar";
 import beers from "./beers";
 import { useState } from "react";
 import { FormEvent } from "react";
