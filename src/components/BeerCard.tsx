@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Beer } from "../types/types";
 import "./BeerCard.scss";
+import { Link } from "react-router-dom";
 
 type BeerCardProps = {
   beer: Beer;
@@ -33,6 +34,9 @@ const BeerCard = ({ beer }: BeerCardProps) => {
       {beer.food_pairing.map((food) => {
         return <p key={food}>-{food}</p>;
       })}
+      <Link className="beer-card__link" to={`/beers/${beer.id}`}>
+        Brewing tips
+      </Link>
     </div>
   ) : (
     <div className="beer-card beer-card--back">
@@ -57,6 +61,9 @@ const BeerCard = ({ beer }: BeerCardProps) => {
           </>
         )}
       </div>
+      <Link className="beer-card__link" to={`/beers/${beer.id}`}>
+        Brewing tips
+      </Link>
     </div>
   );
 };

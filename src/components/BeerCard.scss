@@ -50,6 +50,21 @@
       border: 1px solid black;
     }
   }
+
+  .beer-card__link {
+    align-self: flex-end;
+    width: 30%;
+    padding: 2px;
+    height: 24px;
+    max-height: 24px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    text-align: center;
+    padding: 3px;
+    color: black;
+    font-size: 12px;
+  }
 }
 
 @media screen and (min-width: 768px) {
