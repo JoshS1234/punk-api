@@ -40,43 +40,42 @@ const Sommelier = ({ beers }: SommelierProps) => {
 
   return (
     <div className="sommelier-page">
-      <div className="sommelier-page__sommelier">
-        <div>
-          <p>
-            I am your virtual beer expert, I can recommend you a drink based on
-            a food pairing. What are you having to eat?
-          </p>
+      <div className="sommelier-page__explanation">
+        <p>
+          I am your virtual beer expert, I can recommend you a drink based on a
+          food pairing. What are you having to eat?
+        </p>
 
-          {/* <select>
+        {/* <select>
             {allFoodPairings.map((food) => {
               return <option>{food}</option>;
             })}
           </select> */}
-        </div>
-        <div>
-          <img src={scientist} />
-        </div>
-        <form onSubmit={handleSubmit}>
-          <label>Food:</label>
-          <input type="text" />
+      </div>
+      <img src={scientist} className="sommelier-page__image" />
+
+      <form onSubmit={handleSubmit} className="sommelier-page__form">
+        <label>Food:</label>
+        <input type="text" />
+        <div className="sommelier-page__form-button-container">
           <button type="submit">Submit</button>
           <button type="reset" onClick={clearBeer}>
             Reset
           </button>
-        </form>
-        <div className="sommelier-page__recommendation">
-          {displayBeer?.name ? (
-            <div>
-              <h3>{displayBeer?.name}</h3>
-              <p>Pairs with:</p>
-              {displayBeer.food_pairing.map((food, index) => {
-                return <p key={index}>{food}</p>;
-              })}
-            </div>
-          ) : (
-            <p>Have anything!</p>
-          )}
         </div>
+      </form>
+      <div className="sommelier-page__recommendation">
+        {displayBeer?.name ? (
+          <div>
+            <h3>{displayBeer?.name}</h3>
+            <p>Pairs with:</p>
+            {displayBeer.food_pairing.map((food, index) => {
+              return <p key={index}>{food}</p>;
+            })}
+          </div>
+        ) : (
+          <p>Have anything!</p>
+        )}
       </div>
     </div>
   );
