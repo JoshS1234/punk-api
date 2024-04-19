@@ -1,7 +1,7 @@
 import "./App.scss";
 import HeaderBar from "./components/HeaderBar";
 import BeerContainer from "./containers/BeerContainer/BeerContainer";
-import SearchContainer from "./containers/SearchContainer/SearchContainer";
+import SearchContainer from "./components/SearchBar/SearchBar";
 import beers from "./beers";
 import { useState } from "react";
 import { FormEvent } from "react";
@@ -58,14 +58,13 @@ function App() {
       <HeaderBar />
       <div className="app__page-content">
         <div className="app__search-container-div">
-          <h2>SearchContainer</h2>
           <SearchContainer
             handleSubmit={handleSubmit}
             handleReset={handleReset}
           />
         </div>
         <div className="app__beer-container-div">
-          <h2>Beer container</h2>
+          <h2>Beer list</h2>
           {filteredBeers && <BeerContainer beers={filteredBeers} />}
         </div>
       </div>
