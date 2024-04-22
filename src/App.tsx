@@ -11,20 +11,27 @@ import Sommelier from "./components/Sommelier/Sommelier";
 import { useEffect, useState } from "react";
 import { Beer } from "./types/types";
 
-
 function App() {
   const [beers, setBeers] = useState<Beer[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const getBeers = async () => {
-    const response = await fetch("http://localhost:3333/v2/beers/");
-    if (response.ok) {
-      const formattedResponse = await response.json();
-      return formattedResponse;
-    } else {
-      throw new Error("didn't work");
+    let totalArr: Beer[] = [];
+    for (let i: number = 1; i < 8; i++) {
+      const response = await fetch(
+        `http://localhost:3333/v2/beers/?per_page=50&page=${i}`
+      );
+      if (response.ok) {
+        const formattedResponse = await response.json();
+        totalArr = totalArr.concat(formattedResponse);
+      } else {
+        throw new Error("didn't work");
+      }
     }
+    console.log(totalArr.length);
+    return totalArr;
   };
+
   useEffect(() => {
     setIsLoading(true);
     getBeers().then((data) => {
