@@ -1,7 +1,7 @@
 import { Beer } from "../../types/types";
 import scientist from "../../assets/scientist.svg";
 import "./Sommelier.scss";
-import { FormEvent, useEffect } from "react";
+import { FormEvent } from "react";
 import { useState } from "react";
 
 type SommelierProps = {
@@ -26,9 +26,7 @@ const Sommelier = ({ beers }: SommelierProps) => {
     const targetFood = e.currentTarget[0] as HTMLFormElement;
     const foodToPair = targetFood.value;
     let filteredBeers = beers.filter((beer) => {
-      console.log(beer);
       return beer.food_pairing.some((food) => {
-        console.log(foodToPair);
         return food.toLowerCase().includes(foodToPair.toLowerCase());
       });
     });
