@@ -10,6 +10,7 @@ type SommelierProps = {
 
 const Sommelier = ({ beers }: SommelierProps) => {
   const [displayBeer, setDisplayBeer] = useState<Beer>();
+  const [hasSearched, setHasSearched] = useState<boolean>(false);
 
   const allFoodPairings: string[] = [];
   beers.forEach((beer) => {
@@ -32,51 +33,50 @@ const Sommelier = ({ beers }: SommelierProps) => {
       });
     });
     setDisplayBeer(filteredBeers[0]);
+    setHasSearched(true);
   };
 
   const clearBeer = () => {
+    setHasSearched(false);
     setDisplayBeer(undefined);
   };
 
   return (
     <div className="sommelier-page">
-      <div className="sommelier-page__explanation">
-        <p>
-          I am your virtual beer expert, I can recommend you a drink based on a
-          food pairing. What are you having to eat?
-        </p>
-
-        {/* <select>
-            {allFoodPairings.map((food) => {
-              return <option>{food}</option>;
-            })}
-          </select> */}
-      </div>
       <img src={scientist} className="sommelier-page__image" />
-
-      <form onSubmit={handleSubmit} className="sommelier-page__form">
-        <label>Food:</label>
-        <input type="text" />
-        <div className="sommelier-page__form-button-container">
-          <button type="submit">Submit</button>
-          <button type="reset" onClick={clearBeer}>
-            Reset
-          </button>
+      <div className="sommelier-page__content">
+        <div className="sommelier-page__explanation">
+          <p>
+            I am your virtual beer expert, I can recommend you a drink based on
+            a food pairing. What are you having to eat?
+          </p>
         </div>
-      </form>
-      <div className="sommelier-page__recommendation">
-        <p>Recommendation: </p>
-        {displayBeer?.name ? (
-          <div>
-            <h3>{displayBeer?.name}</h3>
-            <p>Pairs with:</p>
-            {displayBeer.food_pairing.map((food, index) => {
-              return <p key={index}>{food}</p>;
-            })}
+        <div className="sommelier-page__recommendation">
+          <p>Recommendation: </p>
+          {displayBeer?.name ? (
+            <div>
+              <h3>{displayBeer?.name}</h3>
+              <p>Pairs with:</p>
+              {displayBeer.food_pairing.map((food, index) => {
+                return <p key={index}>{food}</p>;
+              })}
+            </div>
+          ) : hasSearched ? (
+            <p>Nothing found for this, so have anything!</p>
+          ) : (
+            <p>Search for a food!</p>
+          )}
+        </div>
+        <form onSubmit={handleSubmit} className="sommelier-page__form">
+          <label>Food:</label>
+          <input type="text" />
+          <div className="sommelier-page__form-button-container">
+            <button type="submit">Submit</button>
+            <button type="reset" onClick={clearBeer}>
+              Reset
+            </button>
           </div>
-        ) : (
-          <p>Have anything!</p>
-        )}
+        </form>
       </div>
     </div>
   );

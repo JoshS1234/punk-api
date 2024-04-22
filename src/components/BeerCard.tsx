@@ -46,22 +46,24 @@ const BeerCard = ({ beer }: BeerCardProps) => {
         <h4>{beer.name}</h4>
         <button onClick={toggleShowFront}>Summary</button>
       </div>
-      <img className="beer-card__image" src={beer.image_url} />
+      <div className="beer-card__information">
+        <img className="beer-card__image" src={beer.image_url} />
 
-      <div className="beer-card__description-container">
-        {hasShortDescription ? (
-          <p>{beer.description}</p>
-        ) : showFullDescription ? (
-          <>
+        <div className="beer-card__description-container">
+          {hasShortDescription ? (
             <p>{beer.description}</p>
-            <button onClick={toggleShowDescription}>Read less</button>
-          </>
-        ) : (
-          <>
-            <p>{beer.description.slice(0, 200) + "..."}</p>
-            <button onClick={toggleShowDescription}>Read more</button>
-          </>
-        )}
+          ) : showFullDescription ? (
+            <>
+              <p>{beer.description}</p>
+              <button onClick={toggleShowDescription}>Read less</button>
+            </>
+          ) : (
+            <>
+              <p>{beer.description.slice(0, 200) + "..."}</p>
+              <button onClick={toggleShowDescription}>Read more</button>
+            </>
+          )}
+        </div>
       </div>
       <Link className="beer-card__link" to={`/beers/${beer.id}`}>
         Brewing tips

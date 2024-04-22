@@ -32,20 +32,25 @@
     }
   }
 
-  .beer-card__image {
-    min-width: 50px;
-    max-width: 100px;
-    max-height: 150px;
-    margin: 10px;
-    padding: 10px;
-    align-self: center;
+  .beer-card__information {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .beer-card__image {
+      min-width: 50px;
+      max-width: 100px;
+      max-height: 150px;
+      margin: 10px;
+      padding: 10px;
+      align-self: center;
+    }
   }
 
   .beer-card__description-container {
     font-size: 0.8rem;
 
     button {
-      background-color: transparent;
+      background-color: white;
       font-size: 0.7rem;
       border: 1px solid black;
     }
