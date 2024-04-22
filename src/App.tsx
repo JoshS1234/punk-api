@@ -6,9 +6,11 @@ import Nav from "./components/Nav/Nav";
 import NoPage from "./components/NoPage";
 // import beers from "./beers";
 import SpecificBeer from "./components/SpecificBeerPage/SpecificBeer";
-import Sommelier from "./components/Sommelier";
+
+import Sommelier from "./components/Sommelier/Sommelier";
 import { useEffect, useState } from "react";
 import { Beer } from "./types/types";
+
 
 function App() {
   const [beers, setBeers] = useState<Beer[]>([]);

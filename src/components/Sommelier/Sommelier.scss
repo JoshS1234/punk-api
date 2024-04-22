@@ -1,0 +1,80 @@
+.sommelier-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-top: 1px solid black;
+  width: 100%;
+  min-height: 75vh;
+
+  .sommelier-page__explanation {
+    width: 90%;
+    margin-top: 10px;
+  }
+
+  .sommelier-page__image {
+    width: 50%;
+    // max-width: 300px;
+  }
+
+  .sommelier-page__form {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    .sommelier-page__form-button-container {
+      button {
+        margin: 5px 5px;
+        border: 1px solid black;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .sommelier-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: "explanation image" "form image" "recommendation image";
+    gap: 0px;
+
+    .sommelier-page__explanation {
+      grid-area: explanation;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin: 0px auto;
+      width: 70%;
+    }
+
+    .sommelier-page__image {
+      grid-area: image;
+      width: 50%;
+      // max-width: 800px;
+      margin: 0px auto;
+    }
+
+    .sommelier-page__recommendation {
+      grid-area: recommendation;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      margin: 0px auto;
+      width: 70%;
+      min-height: 10vh;
+    }
+
+    .sommelier-page__form {
+      grid-area: form;
+      display: flex;
+      flex-direction: column;
+      margin: 0px auto;
+      width: 70%;
+    }
+  }
+}
