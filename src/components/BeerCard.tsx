@@ -30,6 +30,8 @@ const BeerCard = ({ beer }: BeerCardProps) => {
       <div className="beer-card__information">
         <h5>{beer.tagline}</h5>
         <h5>{beer.abv}% ABV</h5>
+        <h5>{beer.first_brewed}</h5>
+        <h5>{beer.ph} ph</h5>
         <img className="beer-card__image" src={beer.image_url} />
         <h5>Pairs with: </h5>
         {beer.food_pairing.map((food) => {
