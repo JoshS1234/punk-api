@@ -65,6 +65,7 @@ const Sommelier = ({ beers }: SommelierProps) => {
         </div>
       </form>
       <div className="sommelier-page__recommendation">
+        <p>Recommendation: </p>
         {displayBeer?.name ? (
           <div>
             <h3>{displayBeer?.name}</h3>
