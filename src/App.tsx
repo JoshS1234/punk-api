@@ -4,12 +4,36 @@ import HeaderBar from "./components/HeaderBar";
 import Home from "./components/Home/Home";
 import Nav from "./components/Nav/Nav";
 import NoPage from "./components/NoPage";
-import beers from "./beers";
+// import beers from "./beers";
 import SpecificBeer from "./components/SpecificBeerPage/SpecificBeer";
 import Sommelier from "./components/Sommelier";
+import { useEffect, useState } from "react";
+import { Beer } from "./types/types";
 
 function App() {
-  return (
+  const [beers, setBeers] = useState<Beer[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  const getBeers = async () => {
+    const response = await fetch("http://localhost:3333/v2/beers/");
+    if (response.ok) {
+      const formattedResponse = await response.json();
+      return formattedResponse;
+    } else {
+      throw new Error("didn't work");
+    }
+  };
+  useEffect(() => {
+    setIsLoading(true);
+    getBeers().then((data) => {
+      setBeers(data);
+      setIsLoading(false);
+    });
+  }, []);
+
+  return isLoading ? (
+    <p>Loading...</p>
+  ) : (
     <div className="app">
       <HeaderBar />
       <Nav />

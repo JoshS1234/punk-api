@@ -27,13 +27,15 @@ const BeerCard = ({ beer }: BeerCardProps) => {
         <h4>{beer.name}</h4>
         <button onClick={toggleShowFront}>Description</button>
       </div>
-      <h5>{beer.tagline}</h5>
-      <h5>{beer.abv}% ABV</h5>
-      <img className="beer-card__image" src={beer.image_url} />
-      <h5>Pairs with: </h5>
-      {beer.food_pairing.map((food) => {
-        return <p key={food}>-{food}</p>;
-      })}
+      <div className="beer-card__information">
+        <h5>{beer.tagline}</h5>
+        <h5>{beer.abv}% ABV</h5>
+        <img className="beer-card__image" src={beer.image_url} />
+        <h5>Pairs with: </h5>
+        {beer.food_pairing.map((food) => {
+          return <p key={food}>-{food}</p>;
+        })}
+      </div>
       <Link className="beer-card__link" to={`/beers/${beer.id}`}>
         Brewing tips
       </Link>
