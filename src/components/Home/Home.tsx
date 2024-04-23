@@ -22,7 +22,7 @@ const Home = ({ beers }: HomeProps) => {
       firstShownIndex + showNumber
     );
     setBeersToShow(tempBeers);
-  }, [firstShownIndex, showNumber]);
+  }, [filteredBeers, firstShownIndex, showNumber]);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -37,6 +37,9 @@ const Home = ({ beers }: HomeProps) => {
 
     const targetIsAcidic = event.currentTarget[3] as HTMLInputElement;
     const isAcidic = targetIsAcidic.checked;
+
+    const targetIsLowAlcohol = event.currentTarget[4] as HTMLInputElement;
+    const isLowAlcohol = targetIsLowAlcohol.checked;
 
     let tempBeer = beers.filter((beer) => {
       return beer.name.toLowerCase().includes(searchTerm);
@@ -59,8 +62,15 @@ const Home = ({ beers }: HomeProps) => {
       });
     }
 
+    if (isLowAlcohol) {
+      tempBeer = tempBeer.filter((beer) => {
+        return beer.abv < 1;
+      });
+    }
+
     setFirstShownIndex(0);
     setFilteredBeers(tempBeer);
+    console.log(tempBeer[0]);
   };
 
   const handleReset = (event: FormEvent<HTMLFormElement>) => {

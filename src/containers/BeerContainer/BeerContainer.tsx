@@ -31,7 +31,6 @@ const BeerContainer = ({
       <div className="home-container-heading__results-sortbar">
         <div>
           <select onChange={updateDisplayNumber}>
-            <option value="5">5</option>
             <option value="10">10</option>
             <option value="25">25</option>
             <option value="50">50</option>

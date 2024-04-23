@@ -30,7 +30,9 @@ const Sommelier = ({ beers }: SommelierProps) => {
         return food.toLowerCase().includes(foodToPair.toLowerCase());
       });
     });
-    setDisplayBeer(filteredBeers[0]);
+    setDisplayBeer(
+      filteredBeers[Math.floor(Math.random() * filteredBeers.length)]
+    );
     setHasSearched(true);
   };
 

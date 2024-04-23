@@ -5,4 +5,43 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+
+  a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(234, 219, 243);
+    width: 50%;
+    height: 100%;
+    color: black;
+
+    &:hover {
+      background-color: darken(rgb(234, 219, 243), 10%);
+      transition: ease-in-out 0.5s;
+      color: black;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nav-bar {
+    a {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      background-color: rgb(234, 219, 243);
+      width: 50%;
+      height: 100%;
+      color: black;
+      font-size: min(2vw, 24px);
+
+      &:hover {
+        background-color: darken(rgb(234, 219, 243), 10%);
+        transition: ease-in-out 0.5s;
+        color: black;
+      }
+    }
+  }
 }

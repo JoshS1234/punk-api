@@ -27,6 +27,10 @@ const SearchBar = ({ handleSubmit, handleReset }: SearchBarProps) => {
             <input type="checkbox" />
             Acidic (ph {"<"} 4)
           </label>
+          <label className="search-bar__checkbox">
+            <input type="checkbox" />
+            Low alcohol
+          </label>
         </div>
         <div className="search-bar__button-container">
           <button type="submit" className="search-bar__button">
