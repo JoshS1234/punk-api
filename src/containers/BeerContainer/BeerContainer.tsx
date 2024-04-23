@@ -40,8 +40,8 @@ const BeerContainer = ({
           } (out of ${filteredBeers.length})`}</h5>
         </div>
         <div>
-          <button onClick={decrementPage}>previous</button>
-          <button onClick={incrementPage}>next</button>
+          <button onClick={decrementPage}>Previous</button>
+          <button onClick={incrementPage}>Next</button>
         </div>
       </div>
     </div>

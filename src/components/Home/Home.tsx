@@ -1,6 +1,6 @@
 import BeerContainer from "../../containers/BeerContainer/BeerContainer";
 import SearchBar from "../SearchBar/SearchBar";
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { FormEvent } from "react";
 import { Beer } from "../../types/types";
 import "./Home.scss";
@@ -79,7 +79,7 @@ const Home = ({ beers }: HomeProps) => {
     event.currentTarget.reset();
   };
 
-  const updateDisplayNumber = (e: Event<HTMLInputElement>) => {
+  const updateDisplayNumber = (e: ChangeEvent<HTMLSelectElement>) => {
     setShowNumber(Number(e.target.value));
     setFirstShownIndex(0);
   };
@@ -106,8 +106,10 @@ const Home = ({ beers }: HomeProps) => {
           <SearchBar handleSubmit={handleSubmit} handleReset={handleReset} />
         </div>
         <div className="home__beer-container-div">
-          <div>
-            <h2 className="home__container-heading">Beer list</h2>
+          <div className="home__container-heading">
+            <button onClick={decrementPage}>Previous</button>
+            <h2>Beer list</h2>
+            <button onClick={incrementPage}>Next</button>
           </div>
           {filteredBeers && (
             <BeerContainer
