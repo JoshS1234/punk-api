@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { auth } from "../firebaseSetup";
 import LoginContainer from "./components/Login/LoginContainer";
-import MainApp from "./App";
+import App from "./App";
 
 function AppContainer() {
   const [component, setComponent] = useState(<></>);
@@ -9,7 +9,7 @@ function AppContainer() {
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
-        setComponent(<MainApp />);
+        setComponent(<App />);
       } else {
         setComponent(<LoginContainer />);
       }
