@@ -59,7 +59,6 @@ const Home = ({ beers }: HomeProps) => {
       });
     }
 
-    console.log(tempBeer.length);
     setFirstShownIndex(0);
     setFilteredBeers(tempBeer);
   };
@@ -99,23 +98,18 @@ const Home = ({ beers }: HomeProps) => {
         <div className="home__beer-container-div">
           <div>
             <h2 className="home__container-heading">Beer list</h2>
-            <div>
-              <label>Show results</label>
-              <select onChange={updateDisplayNumber}>
-                <option value="10">10</option>
-                <option value="25">25</option>
-                <option value="50">50</option>
-              </select>
-              <div>
-                <button onClick={decrementPage}>previous</button>
-                <button onClick={incrementPage}>next</button>
-              </div>
-              <h5>{`Results ${firstShownIndex}-${
-                firstShownIndex + showNumber
-              } (out of ${filteredBeers.length})`}</h5>
-            </div>
           </div>
-          {filteredBeers && <BeerContainer beers={beersToShow} />}
+          {filteredBeers && (
+            <BeerContainer
+              beers={beersToShow}
+              incrementPage={incrementPage}
+              decrementPage={decrementPage}
+              updateDisplayNumber={updateDisplayNumber}
+              showNumber={showNumber}
+              firstShownIndex={firstShownIndex}
+              filteredBeers={filteredBeers}
+            />
+          )}
         </div>
       </div>
     </div>
