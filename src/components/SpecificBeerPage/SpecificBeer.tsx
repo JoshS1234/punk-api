@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { Beer } from "../../types/types";
 import "./SpecificBeer.scss";
 
@@ -19,6 +19,7 @@ const SpecificBeer = ({ beers }: SpecificBeerProps) => {
   return (
     <div className="beer-profile">
       <div className="beer-profile__information">
+        <Link to="/">Return to beers</Link>
         <h2 className="beer-profile__title">
           How {displayBeer.name} is brewed
         </h2>
