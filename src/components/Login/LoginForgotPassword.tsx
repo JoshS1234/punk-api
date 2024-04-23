@@ -1,8 +1,9 @@
+import { FormEvent } from "react";
 import "./LoginStyles.scss";
 
 type LoginForgotPasswordProps = {
   handleSwitchToCurrUser: () => void;
-  handleForgotPasswordEmail: () => void;
+  handleForgotPasswordEmail: (e: FormEvent) => void;
 };
 
 const LoginForgotPassword = ({

@@ -4,7 +4,7 @@ import { FormEvent, useState } from "react";
 import LoginNewUser from "./LoginNewUser";
 import LoginForgotPassword from "./LoginForgotPassword";
 import {
-  sendPasswordResetEmail,
+  // sendPasswordResetEmail,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
@@ -22,13 +22,9 @@ const LoginContainer = () => {
     const password2 = target.password2.value;
 
     if (password1 == password2) {
-      createUserWithEmailAndPassword(auth, email, password1)
-        .then((data) => {
-          console.log("new account created");
-        })
-        .catch((err) => {
-          alert(err);
-        });
+      createUserWithEmailAndPassword(auth, email, password1).catch((err) => {
+        alert(err);
+      });
     } else {
       target.reset();
       alert("your passwords did not match");
@@ -42,13 +38,9 @@ const LoginContainer = () => {
     const email = target.email.value;
     const password = target.password.value;
 
-    signInWithEmailAndPassword(auth, email, password)
-      .then((data) => {
-        console.log("signed in");
-      })
-      .catch((err) => {
-        alert(err);
-      });
+    signInWithEmailAndPassword(auth, email, password).catch((err) => {
+      alert(err);
+    });
   };
 
   const handleForgotPasswordEmail = (e: FormEvent) => {
