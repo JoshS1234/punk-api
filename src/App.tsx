@@ -1,16 +1,15 @@
-import "./App.scss";
 import { Route, Routes } from "react-router-dom";
 import HeaderBar from "./components/HeaderBar";
 import Home from "./components/Home/Home";
+import "./App.scss";
 import Nav from "./components/Nav/Nav";
 import NoPage from "./components/NoPage";
-// import beers from "./beers";
 import SpecificBeer from "./components/SpecificBeerPage/SpecificBeer";
 import Sommelier from "./components/Sommelier/Sommelier";
 import { useEffect, useState } from "react";
 import { Beer } from "./types/types";
 
-function App() {
+const App = () => {
   const [beers, setBeers] = useState<Beer[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
@@ -52,6 +51,6 @@ function App() {
       </Routes>
     </div>
   );
-}
+};
 
 export default App;
