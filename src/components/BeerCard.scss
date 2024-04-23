@@ -29,6 +29,12 @@
       height: 24px;
       max-height: 24px;
       border: 1px solid black;
+      background-color: white;
+
+      &:hover {
+        background-color: darken(white, 10%);
+        transition: ease-in-out 0.25s;
+      }
     }
   }
 
@@ -53,6 +59,11 @@
       background-color: white;
       font-size: 0.7rem;
       border: 1px solid black;
+
+      &:hover {
+        background-color: darken(white, 10%);
+        transition: ease-in-out 0.25s;
+      }
     }
   }
 
@@ -68,6 +79,11 @@
     text-align: center;
     color: black;
     font-size: 12px;
+
+    &:hover {
+      background-color: darken(white, 10%);
+      transition: ease-in-out 0.25s;
+    }
   }
 }
 

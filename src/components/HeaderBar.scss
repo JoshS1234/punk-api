@@ -1,6 +1,7 @@
 .header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   min-height: 10vh;
   width: 100%;
-  padding: 5px;
-  text-align: center;
 }

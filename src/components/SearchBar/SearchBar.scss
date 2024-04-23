@@ -5,6 +5,11 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    font-size: 18px;
+
+    input {
+      margin-left: 5px;
+    }
 
     .search-bar__checkbox-container {
       display: flex;
@@ -30,6 +35,12 @@
       .search-bar__button {
         margin: 5px;
         border: 1px solid black;
+        background-color: white;
+
+        &:hover {
+          background-color: darken(white, 10%);
+          transition: ease-in-out 0.25s;
+        }
       }
     }
   }

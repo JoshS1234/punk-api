@@ -32,8 +32,14 @@
       border: 1px solid black;
       border-radius: 5px;
       text-decoration: none;
-      background-color: rgb(248, 241, 255);
+      background-color: white;
       color: black;
+      font-size: 14px;
+
+      &:hover {
+        background-color: darken(white, 10%);
+        transition: ease-in-out 0.25s;
+      }
     }
 
     .beer-profile__ingredients-container {

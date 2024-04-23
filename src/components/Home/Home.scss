@@ -58,6 +58,11 @@
             margin: 1px 3px;
             background-color: rgb(192, 180, 163);
             border: 1px solid black;
+
+            &:hover {
+              background-color: darken(rgb(192, 180, 163), 10%);
+              transition: ease-in-out 0.25s;
+            }
           }
         }
       }
