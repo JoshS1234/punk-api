@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { auth } from "../firebaseSetup";
+import { auth } from "../firebaseSetup.ts";
 import LoginContainer from "./components/Login/LoginContainer";
 import App from "./App";
 
