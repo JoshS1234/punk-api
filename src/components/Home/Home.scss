@@ -68,6 +68,9 @@
 @media screen and (min-width: 768px) {
   .home {
     .home__page-content {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+
       .home__search-container-div {
         height: 100%;
       }
@@ -89,7 +92,7 @@
   .home {
     .home__page-content {
       display: grid;
-      grid-template-columns: 1fr 2fr;
+      grid-template-columns: 1fr 3fr;
 
       .home__search-container-div {
       }
