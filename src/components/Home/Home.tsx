@@ -70,7 +70,6 @@ const Home = ({ beers }: HomeProps) => {
 
     setFirstShownIndex(0);
     setFilteredBeers(tempBeer);
-    console.log(tempBeer[0]);
   };
 
   const handleReset = (event: FormEvent<HTMLFormElement>) => {
