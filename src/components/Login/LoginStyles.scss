@@ -1,0 +1,42 @@
+.login-page {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-image: url("https://cdn.dribbble.com/users/2095191/screenshots/4623254/bar-2-dribble.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  .login-page__form {
+    background-color: rgb(202, 158, 128);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px;
+    height: 60;
+    width: 70%;
+    max-width: 400px;
+    border: 1px solid black;
+    border-radius: 10px;
+
+    .login-page__form-label {
+      font-size: 20px;
+      margin: 10px auto;
+    }
+
+    .login-page__form-textbox {
+      height: 24px;
+      width: min(100%, 300px);
+    }
+
+    .login-page__form-button {
+      margin: 10px;
+      width: 75%;
+      border: 1px solid black;
+    }
+  }
+}
