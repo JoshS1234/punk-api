@@ -99,20 +99,21 @@ const Home = ({ beers }: HomeProps) => {
         <div className="home__beer-container-div">
           <div>
             <h2 className="home__container-heading">Beer list</h2>
-            <div>
-              <label>Show results</label>
-              <select onChange={updateDisplayNumber}>
-                <option value="10">10</option>
-                <option value="25">25</option>
-                <option value="50">50</option>
-              </select>
+            <div className="home-container-heading__results-sortbar">
+              <div>
+                <select onChange={updateDisplayNumber}>
+                  <option value="10">10</option>
+                  <option value="25">25</option>
+                  <option value="50">50</option>
+                </select>
+                <h5>{`Results ${firstShownIndex}-${
+                  firstShownIndex + showNumber
+                } (out of ${filteredBeers.length})`}</h5>
+              </div>
               <div>
                 <button onClick={decrementPage}>previous</button>
                 <button onClick={incrementPage}>next</button>
               </div>
-              <h5>{`Results ${firstShownIndex}-${
-                firstShownIndex + showNumber
-              } (out of ${filteredBeers.length})`}</h5>
             </div>
           </div>
           {filteredBeers && <BeerContainer beers={beersToShow} />}
