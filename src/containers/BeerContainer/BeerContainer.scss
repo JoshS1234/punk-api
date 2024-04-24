@@ -7,6 +7,11 @@
   min-height: 100%;
   height: fit-content;
   border: 1px solid black;
+
+  .beer-container__no-beer-message {
+    text-align: center;
+    width: 100%;
+  }
 }
 
 @media screen and (min-width: 768px) {

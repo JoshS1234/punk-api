@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { auth } from "../firebaseSetup.ts";
-import LoginContainer from "./components/Login/LoginContainer";
-import App from "./App";
+import { auth } from "../../firebaseSetup.ts";
+import LoginContainer from "../components/Login/LoginContainer.tsx";
+import App from "../App.tsx";
 
-function AppContainer() {
+const AppContainer = () => {
   const [component, setComponent] = useState(<></>);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ function AppContainer() {
     });
   }, []);
 
-  return <>{component}</>;
-}
+  return <div aria-label="whole-app">{component}</div>;
+};
 
 export default AppContainer;

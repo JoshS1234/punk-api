@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import AppContainer from "./AppContainer.tsx";
+import AppContainer from "./AppContainer/AppContainer.tsx";
 import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 

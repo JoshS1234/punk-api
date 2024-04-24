@@ -1,4 +1,4 @@
-import BeerCard from "../../components/BeerCard";
+import BeerCard from "../../components/BeerCard/BeerCard";
 import { Beer } from "../../types/types";
 import "./BeerContainer.scss";
 
@@ -21,13 +21,19 @@ const BeerContainer = ({
   updateDisplayNumber,
   filteredBeers,
 }: BeerContainerProps) => {
+  const noBeers = filteredBeers.length == 0;
+
   return (
     <div>
-      <div className="beer-container">
-        {beers.map((beer) => {
-          return <BeerCard beer={beer} key={beer.id} />;
-        })}
-      </div>
+      {noBeers ? (
+        <h1 className="beer-container__no-beer-message">No beers found...</h1>
+      ) : (
+        <div className="beer-container">
+          {beers.map((beer) => {
+            return <BeerCard beer={beer} key={beer.id} />;
+          })}
+        </div>
+      )}
       <div className="home-container-heading__results-sortbar">
         <div>
           <select onChange={updateDisplayNumber}>

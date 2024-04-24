@@ -1,12 +1,24 @@
 import { FormEvent } from "react";
 import "./SearchBar.scss";
+import { Beer } from "../../types/types";
 
 type SearchBarProps = {
   handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
   handleReset: (e: FormEvent<HTMLFormElement>) => void;
+  updateDisplayNumber: (e: any) => void;
+  showNumber: number;
+  firstShownIndex: number;
+  filteredBeers: Beer[];
 };
 
-const SearchBar = ({ handleSubmit, handleReset }: SearchBarProps) => {
+const SearchBar = ({
+  handleSubmit,
+  handleReset,
+  updateDisplayNumber,
+  showNumber,
+  firstShownIndex,
+  filteredBeers,
+}: SearchBarProps) => {
   return (
     <div className="search-bar">
       <form onSubmit={handleSubmit} onReset={handleReset}>
@@ -39,6 +51,16 @@ const SearchBar = ({ handleSubmit, handleReset }: SearchBarProps) => {
           <button type="reset" className="search-bar__button">
             Reset
           </button>
+        </div>
+        <div>
+          <select onChange={updateDisplayNumber}>
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+          </select>
+          <h5>{`Results ${firstShownIndex}-${
+            firstShownIndex + showNumber
+          } (out of ${filteredBeers.length})`}</h5>
         </div>
       </form>
     </div>

@@ -102,7 +102,14 @@ const Home = ({ beers }: HomeProps) => {
       <div className="home__page-content">
         <div className="home__search-container-div">
           <h2 className="home__container-heading">Filters</h2>
-          <SearchBar handleSubmit={handleSubmit} handleReset={handleReset} />
+          <SearchBar
+            handleSubmit={handleSubmit}
+            handleReset={handleReset}
+            updateDisplayNumber={updateDisplayNumber}
+            firstShownIndex={firstShownIndex}
+            showNumber={showNumber}
+            filteredBeers={filteredBeers}
+          />
         </div>
         <div className="home__beer-container-div">
           <div className="home__container-heading">

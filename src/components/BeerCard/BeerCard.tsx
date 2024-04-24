@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Beer } from "../types/types";
+import { Beer } from "../../types/types";
 import "./BeerCard.scss";
 import { Link } from "react-router-dom";
 
