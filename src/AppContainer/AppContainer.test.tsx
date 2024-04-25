@@ -3,7 +3,6 @@ import AppContainer from "./AppContainer";
 
 it("should render the form", () => {
   //1. Arrange
-  // render(<AppContainer />);
   render(<AppContainer />);
 
   //2. Act

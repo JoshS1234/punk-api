@@ -15,7 +15,7 @@ const BeerCard = ({ beer }: BeerCardProps) => {
   const [showFullDescription, setShowFullDescription] =
     useState(hasShortDescription);
   const [isFavourite, setIsFavourite] = useState<boolean>(false);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  // const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const toggleShowDescription = () => {
     setShowFullDescription(!showFullDescription);
@@ -54,7 +54,6 @@ const BeerCard = ({ beer }: BeerCardProps) => {
   };
 
   useEffect(() => {
-    setIsLoading(true);
     if (auth.currentUser) {
       getDoc(doc(db, "users", auth.currentUser.uid)).then((data) => {
         if (data.exists()) {
@@ -66,15 +65,11 @@ const BeerCard = ({ beer }: BeerCardProps) => {
         } else {
           setIsFavourite(false);
         }
-        setIsLoading(false);
       });
-      setIsLoading(false);
     }
   }, []);
 
-  return isLoading ? (
-    <p>Loading...</p>
-  ) : showFront ? (
+  return showFront ? (
     <div className="beer-card  beer-card--front">
       <div className="beer-card__header">
         <h4>{beer.name}</h4>
