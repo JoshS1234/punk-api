@@ -52,17 +52,17 @@ const SearchBar = ({
             Reset
           </button>
         </div>
-        <div>
-          <select onChange={updateDisplayNumber}>
-            <option value="10">10</option>
-            <option value="25">25</option>
-            <option value="50">50</option>
-          </select>
-          <h5>{`Results ${firstShownIndex}-${
-            firstShownIndex + showNumber
-          } (out of ${filteredBeers.length})`}</h5>
-        </div>
       </form>
+      <div className="search-bar__show-amount-container">
+        <select onChange={updateDisplayNumber}>
+          <option value="10">10</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+        </select>
+        <h5>{`Results ${firstShownIndex}-${
+          firstShownIndex + showNumber
+        } (out of ${filteredBeers.length})`}</h5>
+      </div>
     </div>
   );
 };

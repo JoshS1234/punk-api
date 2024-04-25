@@ -49,15 +49,18 @@ const LoginContainer = () => {
 
     const email = target.email.value;
     if (!email) {
+      alert(
+        "Normally this function would send a password reset email, however this feature has been disabled as it is a mockup site"
+      );
       // sendPasswordResetEmail(auth, email)
       //   .then((data) => {
-      alert(
-        "If this email is registered, then a password reset email has been sent"
-      );
-      // })
-      // .catch((err) => {
-      //   alert(err);
-      // });
+      //     alert(
+      //       "If this email is registered, then a password reset email has been sent"
+      //     );
+      //   })
+      //   .catch((err) => {
+      //     alert(err);
+      //   });
     } else {
       alert("Please enter your registered email");
     }

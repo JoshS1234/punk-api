@@ -1,7 +1,8 @@
+import { FormEvent } from "react";
 import "./LoginStyles.scss";
 
 type LoginNewUserProps = {
-  handleSignUp: (Event) => void;
+  handleSignUp: (e: FormEvent) => void;
   handleSwitchToCurrUser: () => void;
 };
 

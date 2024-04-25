@@ -8,33 +8,43 @@ import SpecificBeer from "./components/SpecificBeerPage/SpecificBeer";
 import Sommelier from "./components/Sommelier/Sommelier";
 import { useEffect, useState } from "react";
 import { Beer } from "./types/types";
+import storedBeers from "./beers";
 
 const App = () => {
   const [beers, setBeers] = useState<Beer[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  const getBeers = async () => {
-    let totalArr: Beer[] = [];
-    for (let i: number = 1; i < 8; i++) {
-      const response = await fetch(
-        `http://localhost:3333/v2/beers/?per_page=50&page=${i}`
-      );
-      if (response.ok) {
-        const formattedResponse = await response.json();
-        totalArr = totalArr.concat(formattedResponse);
-      } else {
-        throw new Error("didn't work");
-      }
-    }
-    return totalArr;
-  };
+  // const getBeers = async () => {
+  //   let totalArr: Beer[] = [];
+  //   for (let i: number = 1; i < 8; i++) {
+  //     const response = await fetch(
+  //       `http://localhost:3333/v2/beers/?per_page=50&page=${i}`
+  //     );
+  //     if (response.ok) {
+  //       const formattedResponse = await response.json();
+  //       totalArr = totalArr.concat(formattedResponse);
+  //     } else {
+  //       throw new Error("API request failed");
+  //     }
+  //   }
+  //   return totalArr;
+  // };
 
+  // //useEffect with API
+  // useEffect(() => {
+  //   setIsLoading(true);
+
+  //   getBeers().then((data) => {
+  //     setBeers(data);
+  //     setIsLoading(false);
+  //   });
+  // }, []);
+
+  // //useEffect for storedData
   useEffect(() => {
     setIsLoading(true);
-    getBeers().then((data) => {
-      setBeers(data);
-      setIsLoading(false);
-    });
+    setBeers(storedBeers);
+    setIsLoading(false);
   }, []);
 
   return isLoading ? (
