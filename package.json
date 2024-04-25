@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://JoshS1234.github.io/punk-api/",
+  "homepage": "https://JoshS1234.github.io/punk-api/#/",
   "author": "Josh Spence",
   "scripts": {
     "dev": "vite",
