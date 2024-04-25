@@ -9,6 +9,7 @@ import Sommelier from "./components/Sommelier/Sommelier";
 import { useEffect, useState } from "react";
 import { Beer } from "./types/types";
 import storedBeers from "./beers";
+import Favourites from "./components/FavouritesPage/Favourites";
 
 const App = () => {
   const [beers, setBeers] = useState<Beer[]>([]);
@@ -57,6 +58,7 @@ const App = () => {
         <Route path="/" element={<Home beers={beers} />} />
         <Route path="/beers/:beerId" element={<SpecificBeer beers={beers} />} />
         <Route path="/sommelier" element={<Sommelier beers={beers} />} />
+        <Route path="/favourites" element={<Favourites beers={beers} />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
     </div>
