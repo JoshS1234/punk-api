@@ -26,42 +26,50 @@ const BeerCard = ({ beer }: BeerCardProps) => {
   };
 
   const toggleFavourite = () => {
-    getDoc(doc(db, "users", auth.currentUser.uid)).then((data) => {
-      if (data.exists()) {
-        const docRef = doc(db, "users", auth.currentUser?.uid);
-        if (isFavourite) {
-          const removedBeer = data.data().favouriteBeers.filter((thisBeer) => {
-            return thisBeer != beer.name;
-          });
-          setIsFavourite(false);
-          return updateDoc(docRef, {
-            favouriteBeers: removedBeer,
-          });
-        } else {
-          setIsFavourite(true);
-          return updateDoc(docRef, {
-            favouriteBeers: [...data.data().favouriteBeers, beer.name],
-          });
+    if (auth.currentUser) {
+      getDoc(doc(db, "users", auth.currentUser.uid)).then((data) => {
+        if (data.exists()) {
+          if (auth.currentUser) {
+            const docRef = doc(db, "users", auth.currentUser.uid);
+            if (isFavourite) {
+              const removedBeer = data
+                .data()
+                .favouriteBeers.filter((thisBeer: string) => {
+                  return thisBeer != beer.name;
+                });
+              setIsFavourite(false);
+              return updateDoc(docRef, {
+                favouriteBeers: removedBeer,
+              });
+            } else {
+              setIsFavourite(true);
+              return updateDoc(docRef, {
+                favouriteBeers: [...data.data().favouriteBeers, beer.name],
+              });
+            }
+          }
         }
-      }
-    });
+      });
+    }
   };
 
   useEffect(() => {
     setIsLoading(true);
-    getDoc(doc(db, "users", auth.currentUser.uid)).then((data) => {
-      if (data.exists()) {
-        if (data.data().favouriteBeers.includes(beer.name)) {
-          setIsFavourite(true);
+    if (auth.currentUser) {
+      getDoc(doc(db, "users", auth.currentUser.uid)).then((data) => {
+        if (data.exists()) {
+          if (data.data().favouriteBeers.includes(beer.name)) {
+            setIsFavourite(true);
+          } else {
+            setIsFavourite(false);
+          }
         } else {
           setIsFavourite(false);
         }
-      } else {
-        setIsFavourite(false);
-      }
+        setIsLoading(false);
+      });
       setIsLoading(false);
-    });
-    setIsLoading(false);
+    }
   }, []);
 
   return isLoading ? (
