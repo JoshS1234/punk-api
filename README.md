@@ -1,30 +1,24 @@
-# React + TypeScript + Vite
+# Punk-API (Brewdog database project)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the repository for my Punk-API front-end project, made using React, SCSS, Firebase and TypeScript. It displays information about brewdog beers, and allows the user to favourite beers that they like.
 
-Currently, two official plugins are available:
+## Getting started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Instructions:
 
-## Expanding the ESLint configuration
+1. Clone this repository
+2. use npm install to install any required packages
+3. Use npm run dev to use the web app.
+4. This repo uses locally stored data about the beers, it was originally intended to work in tandem with the Punk-API site online, but that has been taken down.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Functionality
 
-- Configure the top-level `parserOptions` property like this:
+The main page of this web app is a page displaying all of the beers. The user can apply filters here, and search for beers by name. For each individual beer card, the user has the option to read a description, see how it is made, or add it to their favourites.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+A second main function of the web app is the virtual sommelier, this allows the user to search for a food, and then the sommelier will recommend a beer to pair with this food.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Lastly, the user can look at their favourites on the "favourites page" (rather predictably). This is linked to their login, so it should work across different devices.
+
+# Tips
+
+The sommelier recommends a random choice out of the available options, so if you don't like the suggested choice, try submitting again and he may suggest something different.
