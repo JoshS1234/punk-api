@@ -5,6 +5,10 @@
   min-height: 10vh;
   width: 100%;
 
+  h1 {
+    font-size: max(16px, 4vw);
+  }
+
   .header-bar__logout {
     margin: 0px 10px;
   }
