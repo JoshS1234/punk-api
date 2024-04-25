@@ -1,7 +1,8 @@
+import { FormEvent } from "react";
 import "./LoginStyles.scss";
 
 type LoginCurrUserProps = {
-  handleSignIn: (Event) => void;
+  handleSignIn: (e: FormEvent) => void;
   handleSwitchToNewUser: () => void;
   handleSwitchToForgotPass: () => void;
 };
@@ -17,7 +18,12 @@ const LoginCurrUser = ({
         <label className="login-page__form-label" htmlFor="email">
           Email
         </label>
-        <input type="text" className="login-page__form-textbox" name="email" />
+        <input
+          type="text"
+          className="login-page__form-textbox"
+          name="email"
+          id="email"
+        />
         <label className="login-page__form-label" htmlFor="password">
           Password
         </label>

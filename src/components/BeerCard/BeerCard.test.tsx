@@ -46,7 +46,9 @@ it("When the user presses the description button, it should show the beer descri
   );
   expect(descriptionText).not.toBeInTheDocument();
 
-  await userEvent.click(showDescriptionButton);
+  if (showDescriptionButton) {
+    await userEvent.click(showDescriptionButton);
+  }
 
   showDescriptionButton = screen.queryByText("description", {
     exact: false,
