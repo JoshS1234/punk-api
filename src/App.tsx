@@ -59,7 +59,6 @@ const App = () => {
         <Route path="/beers/:beerId" element={<SpecificBeer beers={beers} />} />
         <Route path="/sommelier" element={<Sommelier beers={beers} />} />
         <Route path="/favourites" element={<Favourites beers={beers} />} />
-
         <Route path="*" element={<NoPage />} />
       </Routes>
     </div>
