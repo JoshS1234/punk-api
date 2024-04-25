@@ -1,4 +1,4 @@
-import { auth } from "../../../firebaseSetup";
+import { auth, db } from "../../../firebaseSetup";
 import LoginCurrUser from "./LoginCurrUser";
 import { FormEvent, useState } from "react";
 import LoginNewUser from "./LoginNewUser";
@@ -8,6 +8,7 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
+import { setDoc, doc } from "firebase/firestore";
 
 const LoginContainer = () => {
   const [isNewUser, setIsNewUser] = useState(false);
@@ -22,9 +23,17 @@ const LoginContainer = () => {
     const password2 = target.password2.value;
 
     if (password1 == password2) {
-      createUserWithEmailAndPassword(auth, email, password1).catch((err) => {
-        alert(err);
-      });
+      createUserWithEmailAndPassword(auth, email, password1)
+        .then(() => {
+          if (auth.currentUser) {
+            setDoc(doc(db, "users", auth.currentUser.uid), {
+              favouriteBeers: [],
+            });
+          }
+        })
+        .catch((err) => {
+          alert(err);
+        });
     } else {
       target.reset();
       alert("your passwords did not match");
