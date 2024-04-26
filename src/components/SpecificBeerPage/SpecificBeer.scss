@@ -1,8 +1,10 @@
 .beer-profile {
   height: 100%;
   width: 100%;
-  background-color: rgb(199, 199, 252);
   display: flex;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
@@ -17,8 +19,9 @@
   }
 
   .beer-profile__information {
-    background-color: antiquewhite;
     width: 90%;
+    background-color: rgb(181, 229, 252);
+
     height: 90%;
     padding: 20px;
     border-radius: 10px;

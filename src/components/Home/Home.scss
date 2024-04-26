@@ -24,10 +24,9 @@
       width: 100%;
       min-height: 25vh;
       height: 25%;
-      background-color: rgb(192, 180, 163);
       background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
       background-size: 400% 400%;
-      animation: gradient 10s ease infinite;
+      animation: gradient 10s ease-in-out infinite;
 
       .home__container-heading {
         text-align: center;
@@ -52,6 +51,7 @@
         button {
           border: 1px solid black;
           background-color: white;
+          box-shadow: 2px 2px 2px;
 
           &:hover {
             background-color: darken(white, 10%);
@@ -74,11 +74,12 @@
           margin: 5px;
           button {
             margin: 1px 3px;
-            background-color: rgb(192, 180, 163);
+            background-color: white;
             border: 1px solid black;
+            box-shadow: 2px 2px 2px;
 
             &:hover {
-              background-color: darken(rgb(192, 180, 163), 10%);
+              background-color: darken(white, 10%);
               transition: ease-in-out 0.25s;
             }
           }
