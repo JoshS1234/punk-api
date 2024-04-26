@@ -15,7 +15,7 @@ const App = () => {
   const [beers, setBeers] = useState<Beer[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  if (import.meta.env.MODE != "development") {
+  if (import.meta.env.MODE == "development") {
     const getBeers = async () => {
       let totalArr: Beer[] = [];
       for (let i: number = 1; i < 8; i++) {
