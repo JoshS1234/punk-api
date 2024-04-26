@@ -14,7 +14,6 @@ const SpecificBeer = ({ beers }: SpecificBeerProps) => {
   if (beerToShowArr.length == 0) return <p>404 this beer was not found</p>;
 
   const displayBeer = beerToShowArr[0];
-  console.log(displayBeer);
 
   return (
     <div className="beer-profile">
