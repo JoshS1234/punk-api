@@ -91,7 +91,7 @@ const BeerCard = ({ beer }: BeerCardProps) => {
           {isFavourite ? "Unfavourite" : "Favourite"}
         </button>
         <Link className="beer-card__link" to={`/beers/${beer.id}`}>
-          Brewing tips
+          Recipe
         </Link>
       </div>
     </div>
@@ -120,14 +120,15 @@ const BeerCard = ({ beer }: BeerCardProps) => {
           )}
         </div>
       </div>
-      <div>
+      <div className="beer-card__footer-button-container">
         <button onClick={toggleFavourite}>
           {isFavourite ? "Unfavourite" : "Favourite"}
         </button>
         <Link className="beer-card__link" to={`/beers/${beer.id}`}>
-          Brewing tips
+          Recipe
         </Link>
       </div>
+      .
     </div>
   );
 };
