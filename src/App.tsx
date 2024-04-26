@@ -15,6 +15,8 @@ const App = () => {
   const [beers, setBeers] = useState<Beer[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
+  console.log(import.meta.env.MODE);
+
   if (import.meta.env.MODE == "development") {
     const getBeers = async () => {
       let totalArr: Beer[] = [];
@@ -50,7 +52,7 @@ const App = () => {
   // //useEffect for storedData
 
   return isLoading ? (
-    <p>Loading...</p>
+    <p>Loading... if this persists, possible server issue</p>
   ) : (
     <div className="app">
       <HeaderBar />
